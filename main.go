@@ -6,7 +6,12 @@ import (
 )
 
 func main() {
-	t := mustToken()
+	//
+	//
+	//t := mustToken()
+	//
+	//
+
 	//token=flags.Get(token)
 
 	//tgClient=telegram.New(token)
