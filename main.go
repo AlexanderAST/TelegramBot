@@ -10,8 +10,6 @@ const tgBotHost = "api.telegram.org"
 
 func main() {
 
-	//token=flags.Get(token)
-	var a int
 	tgClient := Telegram.New(tgBotHost, mustToken())
 
 	//fetcher=fetcher.New()
@@ -33,4 +31,3 @@ func mustToken() string {
 	}
 	return *token
 }
-re
