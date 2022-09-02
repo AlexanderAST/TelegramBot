@@ -1,6 +1,11 @@
 package storage
 
-import "crypto/sha1"
+import (
+	e "TelegramBot/lib/error"
+	"crypto/sha1"
+	"fmt"
+	"io"
+)
 
 type Storage interface {
 	Save(p *Page) error
@@ -17,4 +22,11 @@ type Page struct {
 func (p Page) Hash() (string, error) {
 
 	h := sha1.New()
+	if _, err := io.WriteString(h, p.URL); err != nil {
+		return "", e.Wrap("Can't calculate hash", err)
+	}
+	if _, err := io.WriteString(h, p.UserName); err != nil {
+		return "", e.Wrap("Can't calculate hash", err)
+	}
+	return fmt.Sprintf("%x", h.Sum(nil)), nil
 }
