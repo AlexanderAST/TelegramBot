@@ -13,7 +13,6 @@ const tgBotHost = "api.telegram.org"
 const storagePatch = "storage"
 const batchSize = 100
 
-// 5639029363:AAH5yvZ7GavZU-zRMKKnmNrUvW7MYV2cPEA
 func main() {
 
 	eventsProcessor := telegram.New(
@@ -32,7 +31,7 @@ func main() {
 func mustToken() string {
 	token := flag.String(
 		"tg-bot-token",
-		"5524974036:AAEdoMXLqwCRUb9XnM2d1Tflc9ymn7wN5zw",
+		"",
 		"token for access to telegram bot",
 	)
 	flag.Parse()
