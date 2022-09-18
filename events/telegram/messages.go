@@ -10,5 +10,5 @@ const (
 	msgUnknownCommand = "Unknown command 😳"
 	msgNoSavedPages   = "You have no saved pages 💀"
 	msgSaved          = "Saved! 🥳"
-	msgAlreadyExists  = "You have already have this page in your list 😎"
+	msgAlreadyExists  = "You have already save this page in your list 😎"
 )

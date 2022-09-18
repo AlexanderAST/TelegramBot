@@ -88,11 +88,16 @@ func (p *Processor) sendHello(chatID int) error {
 	return p.tg.SendMessages(chatID, msgHello)
 }
 func isAddCmd(text string) bool {
-	return isUrl(text)
+	if strings.HasPrefix(text, "Http") {
+		return isUrl(text)
+	} else if strings.HasPrefix(text, "http") {
+		return isUrl(text)
+	}
+	return false
 }
 
 func isUrl(text string) bool {
 	u, err := url.Parse(text)
-
+	log.Print(u)
 	return err == nil && u.Host != " "
 }
